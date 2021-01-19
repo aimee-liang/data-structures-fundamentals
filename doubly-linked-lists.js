@@ -42,7 +42,7 @@ class DoublyLinkedList{
         return DLL
     */
     unshift(value){
-        let node = new Node();
+        let node = new Node(value);
         if (this.length === 0){
             this.head = node;
             this.tail = node;
@@ -57,27 +57,28 @@ class DoublyLinkedList{
     /*
     If length is 0, return undefined
     
-    Store the old head property in a variable
-    
     If length is one, 
-        Set head and tail to be null
-        Update head to be the next of the old head
-        Set the head’s previous property to be null
-        Set the old head’s next to be null
+    Set head and tail to be null
+    
+    Store the old head property in a variable
+    Update head to be the next of the old head
+    Set the head’s previous property to be null
+    Set the old head’s next to be null
     Decrement the length
     Return old head
     */
     shift(){
         if (this.length === 0) return undefined;
         const previousHead = this.head;
-        
-        if (this.length === 1){
-            this.head = previousHead.next;
-            this.head.prev = null;
-            previousHead.next = null;
-        }
+        this.head = previousHead.next;
+        previousHead.prev = null;
+        previousHead.next = null;
+        this.length--;
 
-        this.length--;       
-        return previousHead;
+        if (this.length === 1){
+            this.tail === null;
+            this.head === null;
+        }
+        return previousHead
     }
 }
