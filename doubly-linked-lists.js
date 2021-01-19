@@ -41,5 +41,17 @@ class DoublyLinkedList{
         increment length
         return DLL
     */
-    unshift()
+    unshift(value){
+        let node = new Node();
+        if (this.length === 0){
+            this.head = node;
+            this.tail = node;
+        } else if (this.length > 0){
+            this.head.prev = node;
+            node.next = this.head;
+            this.head = node;
+        }
+        this.length++;
+        return this;
+    }
 }
