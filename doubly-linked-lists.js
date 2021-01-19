@@ -72,6 +72,11 @@ class DoublyLinkedList{
         if (this.length >= 1){
             this.head === null;
             this.tail === null;
+            previousHead.next = this.head;
+            this.head.prev = null;
+            previousHead.next = null;
         }
+        this.head--;
+        return previousHead
     }
 }
