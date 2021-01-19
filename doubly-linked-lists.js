@@ -24,9 +24,9 @@ class DoublyLinkedList{
         let node = new Node (value);
         if (!this.head){
             this.head = node;
-            this.tail = this.head;
+            this.tail = node;
         } else {
-            this.tail.next= node;
+            this.tail.next = node;
             node.prev = this.tail;
             this.tail = node;
         }
@@ -56,7 +56,9 @@ class DoublyLinkedList{
     }
     /*
     If length is 0, return undefined
-        Store the old head property in a variable
+    
+    Store the old head property in a variable
+    
     If length is one, 
         Set head and tail to be null
         Update head to be the next of the old head
@@ -66,17 +68,16 @@ class DoublyLinkedList{
     Return old head
     */
     shift(){
-        if (this.length === 0) return undefined
-
+        if (this.length === 0) return undefined;
         const previousHead = this.head;
-        if (this.length >= 1){
-            this.head === null;
-            this.tail === null;
-            previousHead.next = this.head;
+        
+        if (this.length === 1){
+            this.head = previousHead.next;
             this.head.prev = null;
             previousHead.next = null;
         }
-        this.head--;
-        return previousHead
+
+        this.length--;       
+        return previousHead;
     }
 }
