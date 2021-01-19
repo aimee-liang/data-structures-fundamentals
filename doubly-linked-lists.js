@@ -54,4 +54,24 @@ class DoublyLinkedList{
         this.length++;
         return this;
     }
+    /*
+    If length is 0, return undefined
+        Store the old head property in a variable
+    If length is one, 
+        Set head and tail to be null
+        Update head to be the next of the old head
+        Set the head’s previous property to be null
+        Set the old head’s next to be null
+    Decrement the length
+    Return old head
+    */
+    shift(){
+        if (this.length === 0) return undefined
+
+        const previousHead = this.head;
+        if (this.length >= 1){
+            this.head === null;
+            this.tail === null;
+        }
+    }
 }
