@@ -21,10 +21,10 @@ class DoublyLinkedList{
         Return the Doubly Linked List
     */
     push(value){
-        let node = new Node (value);
-        if (!this.head){
+        let node = new Node(value);
+        if (this.head === null){
             this.head = node;
-            this.tail = node;
+            this.tail = this.head;
         } else {
             this.tail.next = node;
             node.prev = this.tail;
@@ -80,5 +80,14 @@ class DoublyLinkedList{
             this.head === null;
         }
         return previousHead
+    }
+    set(){
+    /*
+    Create a variable which is the result of the get method at index passed to function
+        If get method returns valid node, set value of node to value passed to function
+        Return true
+    Else, return false
+    */
+        let result = 
     }
 }
