@@ -67,5 +67,23 @@ class BinarySearchTree {
                     Check and see if there is a node to the left
                     If there is, move to that node and repeat
                     If not, we’re done!
+            If never found, 
+        Return 
     */
+    find(value){
+        if (this.root === null) return false /* or false? */
+        let current = this.root
+        let found = false
+        while(!found && current){ /* while we haven't found the value yet and there are still nodes to check */
+            if (value < current.value){
+                current = current.left
+            } else if (value > current.value){
+                current = current.right
+            } else {
+                found = true
+            }
+        }
+        if (!found) return undefined
+        return current
+    }
 }
