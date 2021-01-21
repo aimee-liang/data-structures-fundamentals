@@ -31,8 +31,7 @@ class Queue{
         this.size++
         return this.size
     }
-    /*
-    If there is no first property, return null
+    /* If there is no first property, return null
     Store first property in a variable
     See if first is the same as last (in that there is only one node). 
         If so, set the first and last to be null
