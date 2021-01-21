@@ -18,20 +18,21 @@ class BinarySearchTree {
         If not, the new node is now the root
         If there is, see if the value of the new node is greater than or less than the value of the root
         If it is greater
-        Check to see if there is a node to the right
-        If there is, move to that node and repeat above steps
-        If there is not, add this node as the right property
+            Check to see if there is a node to the right
+                If there is, move to that node and repeat above steps
+                If there is not, add this node as the right property
         If it is lesser
-        Check to see if there is a node to the left
-        If there is, move to that node and repeat above steps
-        If not, add this node as the left property
+            Check to see if there is a node to the left
+                If there is, move to that node and repeat above steps
+                If not, add this node as the left property
     */
     insert(){
         let node = new Node(value)
-        if (!this.root){
+        if (this.root === null){
             this.root = node
+            return this
         } else {
-            
+            let currentHead = this.head /* variable created to keep track of head and compare values */
         }
     }
 }
