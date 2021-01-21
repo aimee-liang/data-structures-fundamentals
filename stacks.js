@@ -46,5 +46,14 @@ class Stack{
     */
     pop(){
         if (!this.first) return null
+        let firstProp = this.first
+        if (this.size === 1){
+            this.first = null
+            this.last = null
+        } else {
+            this.first.next = this.first
+        }
+        --this.size
+        return firstProp
     }
 }
