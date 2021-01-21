@@ -44,12 +44,12 @@ class Queue{
         if (!this.first) return null
         let firstProp = this.first
         if (this.first === this.last){
-            this.first = null
             this.last = null
         } else {
             this.first = this.first.next
         }
-        return this.size--
+        this.size--
+        return firstProp.value
     }
 }
 
