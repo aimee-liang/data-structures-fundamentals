@@ -132,4 +132,16 @@ class BinarySearchTree {
         }
         return temp
     }
+    /* Create variable to store values of nodes visited
+    Store the BST root in a variable
+    Write a helper function which takes node as an argument
+        If the node has a left property, call helper function with node.left
+        If the node has a right property, call helper function with node.right
+        Push the value of the node into the variable that stores the values
+        Invoke helper function with the above variable
+    Return array of values
+    */
+    PostOrder(){
+        
+    }
 }
