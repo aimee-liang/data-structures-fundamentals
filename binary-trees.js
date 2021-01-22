@@ -128,7 +128,7 @@ class BinarySearchTree {
             if (node.right){
                 helper(node.right)
             }
-            /* invoke? */
+            helper(current) /* invoke? */
         }
         return temp
     }
