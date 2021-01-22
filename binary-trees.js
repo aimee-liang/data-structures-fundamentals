@@ -86,4 +86,8 @@ class BinarySearchTree {
         if (!found) return undefined
         return current
     }
+    BFS(){
+        let temp = [], queue = []
+        queue.push(this.root)
+    }
 }
