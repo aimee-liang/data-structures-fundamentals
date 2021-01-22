@@ -142,6 +142,13 @@ class BinarySearchTree {
     Return array of values
     */
     PostOrder(){
-        
+        let temp = [], current = this.root
+        function helper(node){
+            if (node.left) helper(node.left)
+            if (node.right) helper(node.right)
+            temp.push(node.value)
+        }
+        helper(current)
+        return temp
     }
 }
