@@ -163,8 +163,11 @@ class BinarySearchTree {
     InOrder(){
         let temp = [], current = this.root
         function helper(node){
-            if (node.left) helper (node.left)
-            
+            if (node.left) helper(node.left)
+            temp.push(node.value)
+            if (node.right) helper(node.right)
         }
+        helper(current)
+        return temp
     }
 }
