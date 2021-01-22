@@ -151,4 +151,20 @@ class BinarySearchTree {
         helper(current)
         return temp
     }
+    /*Create variable to store values of nodes visited
+    Store the BST root in a variable
+    Write helper function which takes node as an argument
+        If the node has a left property, call helper function with the value of the node.left
+        Push the value of node into variable that stores the values
+        If node has the right property, call helper function with the right property on node
+    Invoke helper function with current variable
+    Return array of values
+    */
+    InOrder(){
+        let temp = [], current = this.root
+        function helper(node){
+            if (node.left) helper (node.left)
+            
+        }
+    }
 }
