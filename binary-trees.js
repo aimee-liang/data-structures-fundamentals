@@ -99,7 +99,7 @@ class BinarySearchTree {
         queue.push(node)
         while(queue.length){
             node = queue.shift() /* this will dequeue the node */
-            temp.push(node)
+            temp.push(node.value)
             if (node.left){
                 queue.push(node.left)
             } 
@@ -107,5 +107,29 @@ class BinarySearchTree {
                 queue.push(node.right)
             }
         }
+        return temp
+    }
+    /* Create variable to store values of nodes visited
+    Store the root in a variable (called current)
+    Write a helper function which accepts a node
+        Push the node’s value into the variable
+        If the node has a left property, call the helper function with the node’s left 
+        If the node has a right property, call the helper function with the node’s right
+    Invoke helper function with the current variable
+    Return array of values
+    */
+    PreOrder(){
+        let temp = [], current = this.root
+        function helper(node){
+            temp.push(node.value)
+            if (node.left){
+                helper(node.left)
+            }
+            if (node.right){
+                helper(node.right)
+            }
+            /* invoke? */
+        }
+        return temp
     }
 }
