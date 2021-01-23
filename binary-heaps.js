@@ -12,12 +12,25 @@ class MaxBinaryHeap{
     Push the value into values property of heap
     Bubble value up to its proper spot by:
     Creating a variable called index, which is the length of the values property - 1
-    Create another variable called parentIndex which is the  floor of (index - 1)/2
+    Create another variable called parentIndex which is the floor of (index - 1)/2
         Keep looping as long as the values element at parentIndex is less than the values element at index
         Swap the value of the values element at the parentIndex with the value of the values element at index
         Set index to be parentIndex and start over
     */
     insert(value){
         this.values.push(value)
-    }
+        this.bubbleUp()
+        }
+        bubbleUp(){
+            let index = this.values.length - 1
+            let element = this.values[index]
+            while (index > 0) {
+                let parentIndex = Math.floor( (index - 1) / 2 )
+                let parentElement = this.values[parentIndex]
+                if (element < parentElement) break
+                this.values[parentElement] = element
+                this.values[element] = parentElement
+                index = parentIndex
+            }
+        }
 }
