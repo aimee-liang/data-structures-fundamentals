@@ -45,5 +45,38 @@ class MaxBinaryHeap{
         Keep looping and swapping until neither child is larger than the element
         Return the old root
     */
-    
+    remove(){
+        let maxValue = this.values[0]
+        let endValue = this.values.pop()
+        this.values[0] = endValue
+        this.sinkDown()
+        return maxValue
+    }
+        sinkDown(){
+            let index = 0
+            let length = this.values.length
+            let element = this.values[index]
+            while(true){
+                let leftChildIndex = (2 * index + 1)
+                let rightChildIndex = (2 * index + 2)
+                let leftChild, rightChild
+                let swap = null
+                if (leftChildIndex < index){
+                    leftChild = this.values[leftChildIndex]
+                    if (leftChild > element){
+                        swap = leftChildIndex
+                    }
+                }
+                if (rightChildIndex < index){
+                    rightChild = this.values[rightChildIndex]
+                    if ( (swap === null && rightChild > element) || (swap !== null && rightChild > leftChild) ){
+                        swap = rightChildIndex
+                    }
+                }
+                if (swap === null) break
+                this.values[index] = this.values[swap]
+                this.values[swap] = element
+                index = swap
+            }
+        }
 }
