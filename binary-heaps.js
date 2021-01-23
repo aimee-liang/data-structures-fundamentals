@@ -48,8 +48,10 @@ class MaxBinaryHeap{
     remove(){
         let maxValue = this.values[0]
         let endValue = this.values.pop()
-        this.values[0] = endValue
-        this.sinkDown()
+        if (this.values.length > 0) {
+            this.values[0] = endValue
+            this.sinkDown()
+        }
         return maxValue
     }
         sinkDown(){
@@ -61,13 +63,13 @@ class MaxBinaryHeap{
                 let rightChildIndex = (2 * index + 2)
                 let leftChild, rightChild
                 let swap = null
-                if (leftChildIndex < index){
+                if (leftChildIndex < length){
                     leftChild = this.values[leftChildIndex]
                     if (leftChild > element){
                         swap = leftChildIndex
                     }
                 }
-                if (rightChildIndex < index){
+                if (rightChildIndex < length){
                     rightChild = this.values[rightChildIndex]
                     if ( (swap === null && rightChild > element) || (swap !== null && rightChild > leftChild) ){
                         swap = rightChildIndex
