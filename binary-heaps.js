@@ -82,3 +82,16 @@ class MaxBinaryHeap{
             }
         }
 }
+
+class Name:
+    PriorityQueue
+
+Properties:
+    values: []
+
+class PriorityQueue{
+    constructor(){
+        this.values = []
+    }
+    
+}
