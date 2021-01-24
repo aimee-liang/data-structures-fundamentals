@@ -115,5 +115,24 @@ class SinglyLinkedList{
     If node is not found, return false
     If node is found, set value of node to the value in function and return true
     */
+    set(value, idx){
+        let foundNode = this.get(idx)
+        if (foundNode){
+            foundNode.value = value
+            return true
+        } else {
+            return false
+        }
+    }
+    /* to insert
+    If index is less than zero, or greater than length, return false
+    If index is same as length, push a new node to the end of the list
+    If index is 0, unshift a new node to the start of the list
+    Otherwise, using Get, access the node at the index - 1
+    Set the next property on that node to be the new node
+    Set the next property on the new node to be the previous next 
+    Increment length
+    Return true
+    */
     
 }
