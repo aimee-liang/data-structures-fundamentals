@@ -99,5 +99,21 @@ class SinglyLinkedList{
     If index is less than zero, or greater than or equal to the length of the list, return null
     Loop through list until you reach the index and return the node at the specific index
     */
-    get()
+    get(idx){
+        if ( (idx < 0) || (idx >= this.length) ) return null
+        let counter = 0
+        let current = this.head
+        while (counter !== idx){
+            current = current.next
+            counter++
+        }
+        return current
+    }
+    /* to set
+    Function accepts value and index
+    Use your get function to find specific node
+    If node is not found, return false
+    If node is found, set value of node to the value in function and return true
+    */
+    
 }
