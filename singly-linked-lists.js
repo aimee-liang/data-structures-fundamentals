@@ -88,6 +88,16 @@ class SinglyLinkedList{
         if (!this.head){
             this.head = node
             this.tail = node
-        }
+        } 
+        node.next = this.head
+        this.head = node
+        this.length++
+        return this
     }
+    /* to get
+    Function accepts an index
+    If index is less than zero, or greater than or equal to the length of the list, return null
+    Loop through list until you reach the index and return the node at the specific index
+    */
+    get()
 }
