@@ -99,7 +99,59 @@ class PriorityQueue{
     constructor(){
         this.values = []
     }
-
+    enqueue(value, priority){
+        let node = new Node (value, priority)
+        this.values.push(node)
+        this.bubbleUp()
+        }
+        bubbleUp(){
+            let index = this.values.length - 1
+            let element = this.values[index]
+            while (index > 0) {
+                let parentIndex = Math.floor( (index - 1) / 2 )
+                let parentElement = this.values[parentIndex]
+                if (element.priority < parentElement.priority) break
+                this.values[parentElement] = element
+                this.values[element] = parentElement
+                index = parentIndex
+            }
+    }
+    dequeue(){
+        let maxValue = this.values[0]
+        let endValue = this.values.pop()
+        if (this.values.length > 0) {
+            this.values[0] = endValue
+            this.sinkDown()
+        }
+        return maxValue
+    }
+        sinkDown(){
+            let index = 0
+            let length = this.values.length
+            let element = this.values[index]
+            while(true){
+                let leftChildIndex = (2 * index + 1)
+                let rightChildIndex = (2 * index + 2)
+                let leftChild, rightChild
+                let swap = null
+                if (leftChildIndex < length){
+                    leftChild = this.values[leftChildIndex]
+                    if (leftChild.priority > element.priority){
+                        swap = leftChildIndex
+                    }
+                }
+                if (rightChildIndex < length){
+                    rightChild = this.values[rightChildIndex]
+                    if ( (swap === null && rightChild.priority > element.priority) || (swap !== null && rightChild.priority > leftChild.priority) ){
+                        swap = rightChildIndex
+                    }
+                }
+                if (swap === null) break
+                this.values[index] = this.values[swap]
+                this.values[swap] = element
+                index = swap
+            }
+        }
     
 }
 
@@ -107,10 +159,5 @@ class Node {
     constructor(val, priority){
         this.val = value 
         this.priority = priority
-    }
-    /* Enqueue method accepts a value and a priority, makes a new node, and puts it in the right spot based off of its priority */
-    enqueue(val, priority){
-        let node = new Node
-        
     }
 }
