@@ -89,9 +89,28 @@ class Name:
 Properties:
     values: []
 
+class Name:
+    Node
+    
+Properties:
+    val
+    priority
 class PriorityQueue{
     constructor(){
         this.values = []
     }
+
     
+}
+
+class Node {
+    constructor(val, priority){
+        this.val = value 
+        this.priority = priority
+    }
+    /* Enqueue method accepts a value and a priority, makes a new node, and puts it in the right spot based off of its priority */
+    enqueue(val, priority){
+        let node = new Node
+        
+    }
 }
