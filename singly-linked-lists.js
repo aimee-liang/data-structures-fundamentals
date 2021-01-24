@@ -74,4 +74,20 @@ class SinglyLinkedList{
         }
         return current
     }
+    /* to unshift
+    Function accepts a value
+    Create a new node using the value passed to the function
+    If there is no head property on the list, set head and tail to be the newly created node
+    Otherwise, set newly created node’s next property to be the current head property on the list
+    Set the head property on the list to be that newly created node
+    Increment length by 1
+    Return list
+    */
+    unshift(value){
+        let node = new Node (value)
+        if (!this.head){
+            this.head = node
+            this.tail = node
+        }
+    }
 }
