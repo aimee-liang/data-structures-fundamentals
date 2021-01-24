@@ -128,11 +128,46 @@ class SinglyLinkedList{
     If index is less than zero, or greater than length, return false
     If index is same as length, push a new node to the end of the list
     If index is 0, unshift a new node to the start of the list
+
     Otherwise, using Get, access the node at the index - 1
     Set the next property on that node to be the new node
     Set the next property on the new node to be the previous next 
     Increment length
     Return true
     */
-    
+    insert(value, idx){
+        if ( (idx < 0) || (idx > this.length) ) return false
+        if (idx === this.length){
+            !!this.push(value)
+        }
+        if (idx === 0){
+            return this.unshift(value)
+        }
+        let node = new Node(value)
+        let prev = this.get(index - 1)
+        let temp = prev.next
+        prev.next = node
+        node.next = temp
+        this.length++
+        return true
+    }
+    /* to remove
+    If index is less than zero or greater than length, return undefined
+    If the index is the same as the length -1, return pop
+    If index is 0, shift
+    Otherwise, using Get, access node at the index - 1
+    Set the next property on that node to be the next of the next node
+    Decrement length
+    Return value of node removed
+    */
+    remove(idx){
+        if ( (idx < 0) || (idx > this.length) ) return undefined
+        if (idx === this.length - 1) return this.pop()
+        if (idx === 0) return this.shift()
+        let previousNode = this.get(index - 1)
+        let removed = previousNode.next
+        previousNode.next = removed.next
+        this.length--
+        return removed
+    }
 }
