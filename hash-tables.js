@@ -19,6 +19,18 @@ class HashTable{
     */
     set(key, value){
         let index = this._hash(key)
-        return index
+        if (!this.keyMap[index]){
+            this.keyMap[index] = []
+        }
+        this.keyMap[index].push([key, value])
+    }
+    /* get
+    Accepts a key and a value
+    Hashes the key
+    Retrieves the key-value pair in the hash table
+    If key not found, return undefined
+    */
+    get(key){
+
     }
 }
