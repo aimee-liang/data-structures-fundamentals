@@ -18,6 +18,7 @@ class HashTable{
     Stores the key-value pair in the hash table array via separate chaining
     */
     set(key, value){
-        
+        let index = this._hash(key)
+        return index
     }
 }
