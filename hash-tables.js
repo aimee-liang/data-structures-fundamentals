@@ -25,12 +25,20 @@ class HashTable{
         this.keyMap[index].push([key, value])
     }
     /* get
-    Accepts a key and a value
+    Accepts a key
     Hashes the key
     Retrieves the key-value pair in the hash table
     If key not found, return undefined
     */
     get(key){
-
+        let index = this._hash(key)
+        if (this.keyMap[index]){
+            for (let i = 0; i < this.keyMap[index].length; i++){ /* iterating through index's subarrays */
+                if(this.keyMap[index][i][0] === key){
+                    return this.keyMap[index][i][1] /* return value of key pair */
+                }
+            }
+        } 
+        return undefined
     }
 }
