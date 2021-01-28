@@ -18,9 +18,11 @@ class Graph{
     Delete key in the adjacency list for that vertex
     */
     removeVertex(name){
-        for (let i = 0; i < this.adjacencyList[name].length; i++){
-            this.removeEdge(name)
+        while (this.adjacencyList[name].length){
+            let adjVertex = this.adjacencyList[name].pop()
+            this.removeEdge(name, adjVertex)
         }
+        delete this.adjacencyList[name]
     }
     /* to add an edge
     The function needs to take two vertices as parameters, which we can call vertex1 and vertex2 
