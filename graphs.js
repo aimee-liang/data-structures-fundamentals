@@ -11,6 +11,17 @@ class Graph{
             this.adjacencyList[name] = [] /* set name of vertex to an empty array */
         }
     }
+    /* to remove a vertex
+    Write method called removeVertex that accepts name of a vertex as parameter
+    Should loop for as long as there are any other vertices in the adjacency list for that vertex
+    Inside the loop, call our removeEdge function with the vertex we are trying to remove and any values in the adjacency list for that vertex
+    Delete key in the adjacency list for that vertex
+    */
+    removeVertex(name){
+        for (let i = 0; i < this.adjacencyList[name].length; i++){
+            this.removeEdge(name)
+        }
+    }
     /* to add an edge
     The function needs to take two vertices as parameters, which we can call vertex1 and vertex2 
     Function should find in the adjacency list the key of vertex1 and push vertex2 to the array
@@ -28,7 +39,7 @@ class Graph{
     Don’t worry about error handling for this method
     */
     removeEdge(vertex1, vertex2){
-        this.adjacencyList[vertex1].slice(vertex2)
-        this.adjacencyList[vertex2].slice(vertex1)
+        this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(vertex => vertex!== vertex2)
+        this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(vertex => vertex !== vertex1)
     }
 }
