@@ -17,7 +17,8 @@ class Graph{
     Function should find in adjacency list the key of vertex2 and push vertex1 to the array
     Don’t worry about error handling
     */
-    addEdge(){
-
+    addEdge(vertex1, vertex2){
+        this.adjacencyList[vertex1].push(vertex2)
+        this.adjacencyList[vertex2].push(vertex1)
     }
 }
