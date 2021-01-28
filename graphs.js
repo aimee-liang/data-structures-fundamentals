@@ -21,4 +21,14 @@ class Graph{
         this.adjacencyList[vertex1].push(vertex2)
         this.adjacencyList[vertex2].push(vertex1)
     }
+    /* to remove an edge
+    Function needs to take two vertices as parameters, ideally vertex1 and vertex2
+    The function should reassign the key of vertex1 to be an array that does not contain the value of vertex2 
+    Same for vertex2
+    Don’t worry about error handling for this method
+    */
+    removeEdge(vertex1, vertex2){
+        this.adjacencyList[vertex1].slice(vertex2)
+        this.adjacencyList[vertex2].slice(vertex1)
+    }
 }
