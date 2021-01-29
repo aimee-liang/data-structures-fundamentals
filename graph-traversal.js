@@ -11,11 +11,13 @@ class Graph{
         Loop over all the values in the adjacencyList for that vertex
         If any of the values have not been visited, recursively invoke the helper function with that vertex
         */
-    DFS(){
+    DFSR(startingNode){
         let result = []
         let visited = {}
-        function helper(vertex){
-            if (vertex)
-        }
+        (function helper(vertex){
+            if (!vertex) return
+            visited[vertex] = true
+            result.push(vertex)
+        })(startingNode)
     }
 }
