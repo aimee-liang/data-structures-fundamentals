@@ -72,5 +72,15 @@ class Graph{
     If it is not inside the object that stores nodes visited, mark it as visited and enqueue that vertex
     Return array of visited nodes
     */
-    
+    BFS(vertex){
+        let queue = [vertex]
+        let result = []
+        let visited = {}
+
+        visited[vertex] = true
+
+        while (queue.length){
+            
+        }
+    }
 }
