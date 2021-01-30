@@ -33,16 +33,31 @@ class Graph{
     Create a list to store the end result, to be returned at the very end
     Add the starting vertex to the stack, and mark it visited
     While the stack has something in it,
-    Pop the next vertex from the stack
-    If the vertex hasn’t been visited yet
-    Mark it as visited
-    Add it to the result list
-    Push all of its neighbors to the stack
+        Pop the next vertex from the stack
+        If the vertex hasn’t been visited yet
+        Mark it as visited
+        Add it to the result list
+        Push all of its neighbors to the stack
     Return result array
     */
     DFSI(node){
-        let visited = []
-        let result = {}
-        
+        let stack = [node]
+        let visited = {}
+        let result = []
+        let poppedVertex
+
+        visited[node] = true
+        while(stack.length){
+            poppedVertex = stack.pop()
+            result.push(poppedVertex)
+
+            this.adjacencyList[poppedVertex].forEach(neighbor => {
+                if (!visited[neighbor]){
+                    visited[neighbor] = true
+                    stack.push(neighbor)
+                }
+            })
+        }
+        return result
     }
 }
