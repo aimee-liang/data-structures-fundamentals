@@ -76,11 +76,19 @@ class Graph{
         let queue = [vertex]
         let result = []
         let visited = {}
-
+        let current
         visited[vertex] = true
 
         while (queue.length){
-            
+            current = queue.shift()
+            result.push(current)
+            this.adjacencyList[current].forEach(neighbor => {
+                if (!visited[neighbor]){
+                    visited[neighbor] = true
+                    queue.push(neighbor)
+                }
+            })
         }
+        return result
     }
 }
