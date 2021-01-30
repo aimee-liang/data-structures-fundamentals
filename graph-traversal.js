@@ -60,4 +60,17 @@ class Graph{
         }
         return result
     }
+    /* BFS
+    The function needs to accept a vertex in its parameter
+    Create a queue using an array, and place the starting vertex in it
+    Create an array to store the nodes visited
+    Create an object to mark the nodes visited
+    Mark the starting vertex as visited
+    Continue to loop while there is anything in the queue
+    Shift/Remove the first vertex from the queue and push it into the array that stores nodes visited
+    Loop over each vertex in the adjacency list for the vertex you are visiting
+    If it is not inside the object that stores nodes visited, mark it as visited and enqueue that vertex
+    Return array of visited nodes
+    */
+    
 }
